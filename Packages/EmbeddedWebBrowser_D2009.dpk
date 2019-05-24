@@ -97,7 +97,7 @@ contains
   Browse4Folder in '..\Source\Browse4Folder.pas',
   FileExtAssociate in '..\Source\FileExtAssociate.pas',
   LinksLabel in '..\Source\LinksLabel.pas',
-  IeConst in '..\Source\IeConst.pas',
+  IeConsts in '..\Source\IeConsts.pas',
   EwbAcc in '..\Source\EwbAcc.pas',
   EwbTools in '..\Source\EwbTools.pas',
   DirMonitor in '..\Source\DirMonitor.pas',

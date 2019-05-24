@@ -6,7 +6,7 @@
 //                     Freeware Component                                 *
 //                       for Delphi by                                    *
 //                      Eran Bodankin                                     *
-//                   and Per Lindsø Larsen                                *
+//                   and Per Linds?Larsen                                *
 //                                                                        *
 //                                                                        *
 //  Updated versions:                                                     *
@@ -54,7 +54,7 @@ interface
 {$ENDIF}
 
 uses
-  Dialogs, IEDownloadAcc, Controls, Shellapi, IEConst, ActiveX,
+  Dialogs, IEDownloadAcc, Controls, Shellapi, IEConsts, ActiveX,
   Contnrs, ExtCtrls, Windows, WinInet, UrlMon, Classes, SysUtils
 {$IFDEF DELPHI5}, FileCtrl{$ENDIF}{$IFDEF USE_MSHTML}, MSHTML_EWB{$ENDIF};
 

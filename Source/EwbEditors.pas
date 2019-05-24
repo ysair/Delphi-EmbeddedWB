@@ -109,7 +109,7 @@ type
 implementation
 
 uses
-  Browse4Folder, TypInfo, ShellApi, Windows, Dialogs, SysUtils, IEConst, Forms, shlobj;
+  Browse4Folder, TypInfo, ShellApi, Windows, Dialogs, SysUtils, IEConsts, Forms, shlobj;
 
 //--Verb Delphi menu------------------------------------------------------------
 

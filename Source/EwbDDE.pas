@@ -38,7 +38,7 @@ unit EwbDDE;
 interface
 
 uses
-  Windows, Classes, ShellAPI, EWBAcc, Registry, EwbTools, ShlObj, IEConst,
+  Windows, Classes, ShellAPI, EWBAcc, Registry, EwbTools, ShlObj, IEConsts,
   sysUtils, ActiveX, ComObj;
 
 type

@@ -4,7 +4,7 @@
 //                                                          *
 //                     Freeware Component                   *
 //                            by                            *
-//                     Per Lindsø Larsen                    *                                                       //                   per.lindsoe@larsen.dk                  *
+//                     Per Linds?Larsen                    *                                                       //                   per.lindsoe@larsen.dk                  *
 //                     Developing Team:                     *
 //                  bsalsa - bsalsa.com                     *
 //  Documentation and updated versions:                     *
@@ -87,7 +87,7 @@ type
 implementation
 
 uses
-  IEConst;
+  IEConsts;
 
 var
   Doc: IhtmlDocument2;

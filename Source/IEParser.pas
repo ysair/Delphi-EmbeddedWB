@@ -4,7 +4,7 @@
 //                Freeware Component                 *
 //                       by                          *
 //                                                   *
-//                Per Lindsø Larsen &                *
+//                Per Linds?Larsen &                *
 //              Eran Bodankin (bsalsa)               *
 //                 bsalsa@gmail.com                  *
 //                                                   *
@@ -272,7 +272,7 @@ type
 implementation
 
 uses
-  IEConst, IEDownloadStrings, IEDownloadTools, SysUtils, IeDownloadAcc, UrlMon, WinInet;
+  IEConsts, IEDownloadStrings, IEDownloadTools, SysUtils, IeDownloadAcc, UrlMon, WinInet;
 
 
 function TIEParser.GetContainer(out container: IOleContainer): HRESULT;

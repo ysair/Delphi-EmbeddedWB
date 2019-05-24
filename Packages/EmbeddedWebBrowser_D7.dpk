@@ -107,7 +107,7 @@ contains
   HighLightHTML in '..\Source\HighLightHTML.pas',
   HighLightRichSyntax in '..\Source\HighLightRichSyntax.pas',
   HighLightXML in '..\Source\HighLightXML.pas',
-  IEConst in '..\Source\IeConst.pas',
+  IeConsts in '..\Source\IeConsts.pas',
   IEGuid in '..\Source\IEGuid.pas',
   MenuContext in '..\Source\MenuContext.pas',
   Mshtml_Ewb in '..\Source\Mshtml_Ewb.pas',

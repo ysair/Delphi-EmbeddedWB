@@ -146,7 +146,9 @@ begin
 {$IFDEF DELPHI6_UP}
   RegisterPropertyEditor(TypeInfo(WideString), TEmbeddedWB, 'HostCSS', TMultiStringProperty);
 {$ENDIF}
+{$IFNDEF DELPHIX_SEATTLE_UP}
   RegisterActions('EmbeddedWB', [TEwbLinkAction], nil);
+{$ENDIF}
 end;
 
 end.

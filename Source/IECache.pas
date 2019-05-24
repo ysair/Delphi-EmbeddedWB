@@ -4,7 +4,7 @@
 //                     For Delphi 5 to XE                      *
 //                     Freeware Component                      *
 //                            by                               *
-//                     Per Lindsø Larsen                       *
+//                     Per Linds?Larsen                       *
 //                   per.lindsoe@larsen.dk                     *
 //                                                             *
 //  Contributions:                                             *
@@ -47,7 +47,7 @@ interface
 {$I EWB.inc}
 
 uses
-  WinInet, Windows, Messages, SysUtils, Classes, IeConst;
+  WinInet, Windows, Messages, SysUtils, Classes, IeConsts;
 
 type
   PInternetCacheTimeStamps = ^TInternetCacheTimeStamps;

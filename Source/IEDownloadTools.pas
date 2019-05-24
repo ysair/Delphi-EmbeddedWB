@@ -38,7 +38,7 @@ unit IEDownloadTools;
 interface
 
 uses
-  Windows, IeConst, SysUtils, ActiveX;
+  Windows, IEConsts, SysUtils, ActiveX;
 
 function ResponseCodeToStr(dwResponse: Integer): string;
 function FormatSize(Byte: Double): string;

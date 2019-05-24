@@ -177,7 +177,7 @@ type
 implementation
 
 uses
-  EwbCoreTools, SysUtils, Forms, IEConst;
+  EwbCoreTools, SysUtils, Forms, IEConsts;
 
 constructor TUrl.Create(const Url: string);
 begin
@@ -276,7 +276,9 @@ begin
     if (FPort = 0) then
       nPort := FPort;
 {$IFDEF DELPHI6_UP}
+{$IFNDEF DELPHIX_SEATTLE_UP}
     pad := 1; //force correct allignment regardless of comp. flags
+{$ENDIF}
 {$ENDIF}
   end;
 end;

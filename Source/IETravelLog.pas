@@ -3,7 +3,7 @@
 //                                                          *
 //                     Freeware Component                   *
 //                            by                            *
-//                     Per Lindsø Larsen                    *
+//                     Per Linds?Larsen                    *
 //                Updated by Eran Bodankin - bsalsa         *
 //                     bsalsa@gmail.com                    *
 //                                                          *
@@ -42,7 +42,7 @@ interface
 {$I EWB.inc}
 
 uses
-  Activex, Windows, Classes, EmbeddedWB, IEConst, EwbAcc;
+  Activex, Windows, Classes, EmbeddedWB, IEConsts, EwbAcc;
 
 type
   TOnEntryEvent = procedure(Title, Url: WideString; var Cancel: Boolean) of object;

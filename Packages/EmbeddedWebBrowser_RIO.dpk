@@ -1,7 +1,7 @@
 {*******************************************************}
-{          Embedded Web Browser package Delphi 2006     }
+{          Embedded Web Browser package Delphi RIO      }
 {                                                       }
-{            For Delphi 5 - XE 				}
+{            For Delphi 5 - RIO                         }
 {                Freeware Components                    }
 {            Please note our uses terms                 }
 {                                                       }
@@ -31,9 +31,10 @@ You may use, change or modify the component under 4 conditions:
 4. Please, consider donation in our web site!  
 {*******************************************************************************}
 
-package EmbeddedWebBrowser_D2006;
+package EmbeddedWebBrowser_RIO;
 {$R *.res}
 {$R '..\Source\EWB.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS OFF}
 {$BOOLEVAL OFF}
@@ -44,26 +45,28 @@ package EmbeddedWebBrowser_D2006;
 {$LOCALSYMBOLS OFF}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS OFF}
 {$RANGECHECKS OFF}
 {$REFERENCEINFO OFF}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'Internet Embedded Web Browser Components'}
 {$IMPLICITBUILD ON}
-{%File 'EWB.inc'}
 
 requires
   designide,
-  vcljpg,
   rtl,
-  vcl;
+  vcl,
+  vclimg,
+  vclie;
 
 contains
   EmbeddedWB in '..\Source\EmbeddedWB.pas',
@@ -98,7 +101,6 @@ contains
   Browse4Folder in '..\Source\Browse4Folder.pas',
   FileExtAssociate in '..\Source\FileExtAssociate.pas',
   LinksLabel in '..\Source\LinksLabel.pas',
-  IeConsts in '..\Source\IeConsts.pas',
   EwbAcc in '..\Source\EwbAcc.pas',
   EwbTools in '..\Source\EwbTools.pas',
   DirMonitor in '..\Source\DirMonitor.pas',
@@ -124,7 +126,7 @@ contains
   MSHTMLEvents in '..\Source\MSHTMLEvents.pas',
   EwbControlComponent in '..\Source\EwbControlComponent.pas',
   EwbMouseHook in '..\Source\EwbMouseHook.pas',
-  EwbFocusControl in '..\Source\EwbFocusControl.pas';
-
+  EwbFocusControl in '..\Source\EwbFocusControl.pas',
+  IEConsts in '..\Source\IEConsts.pas';
 
 end.

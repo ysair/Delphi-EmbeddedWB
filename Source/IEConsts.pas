@@ -4,7 +4,7 @@
 //                       For Delphi                            *
 //                                                             *
 //  Contributions:                                             *
-//  Per Lindsø Larsen                                          *
+//  Per Linds?Larsen                                          *
 //  Eran Bodankin (bsalsa) bsalsa@gmail.com                   *
 //  Thomas Stutz (smot)                                        *
 //                                                             *
@@ -35,7 +35,7 @@ You may use, change or modify the component under 4 conditions:
 4. Please, consider donation in our web site!
 {*******************************************************************************}
 
-unit IEConst;
+unit IEConsts;
 
 interface
 

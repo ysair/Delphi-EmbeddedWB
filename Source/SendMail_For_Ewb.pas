@@ -212,22 +212,22 @@ var
         Result := MapiResolveName(0, 0, PAnsiChar(strRecipient), MAPI_DIALOG, 0,
           lpRecip);
 
-      StrCopy(PAnsiChar(new(TlpszRecipName)), lpRecip^.lpszName);
+      {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}StrCopy(PAnsiChar(new(TlpszRecipName)), lpRecip^.lpszName);
 
       if Result = SUCCESS_SUCCESS then
       begin
-        strRecipient := StrPas(lpRecip^.lpszName);
+        strRecipient := {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}StrPas(lpRecip^.lpszName);
         with lpRecipArray^[i] do
         begin
           if lpRecip^.lpszAddress = nil then
           begin
-            lpszAddress := StrCopy(new(TlpszRecipName)^,
-              lpRecip^.lpszName);
+            lpszAddress := {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}
+                StrCopy(new(TlpszRecipName)^, lpRecip^.lpszName);
           end
           else
           begin
-            lpszAddress := StrCopy(new(TlpszRecipName)^,
-              lpRecip^.lpszAddress);
+            lpszAddress := {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}
+                StrCopy(new(TlpszRecipName)^, lpRecip^.lpszAddress);
           end;
           ulEIDSize := lpRecip^.ulEIDSize;
           lpEntryID := lpRecip^.lpEntryID;
@@ -310,23 +310,23 @@ begin
       lpAttachArray := TlpAttachArray(StrAlloc(nFileCount *
         SizeOf(TMapiFileDesc)));
 {$ENDIF UNICODE}
-      FillChar(lpAttachArray^, StrBufSize(PAnsiChar(lpAttachArray)), 0);
+      FillChar(lpAttachArray^, {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}StrBufSize(PAnsiChar(lpAttachArray)), 0);
       for i := 0 to nFileCount - 1 do
       begin
         lpAttachArray^[i].nPosition := Cardinal(-1);
               //Cardinal($FFFFFFFF); //ULONG(-1);
-        lpAttachArray^[i].lpszPathName := StrPCopy(new(TlpszPathname)^,
-          AnsiString(Attachments[i]));
+        lpAttachArray^[i].lpszPathName := {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}
+            StrPCopy(new(TlpszPathname)^, AnsiString(Attachments[i]));
         if i < AttachmentNames.Count then
         begin
           lpAttachArray^[i].lpszFileName :=
-            StrPCopy(new(TlpszFileName)^,
+            {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}StrPCopy(new(TlpszFileName)^,
             AnsiString(AttachmentNames[i]))
         end
         else
         begin
           lpAttachArray^[i].lpszFileName :=
-            StrPCopy(new(TlpszFileName)^,
+            {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}StrPCopy(new(TlpszFileName)^,
             AnsiString(ExtractFileName(Attachments[i])));
         end;
       end;
@@ -345,7 +345,7 @@ begin
     lpRecipArray := TlpRecipArray(StrAlloc(Recipients.Count *
       SizeOf(TMapiRecipDesc)));
 {$ENDIF UNICODE}
-    FillChar(lpRecipArray^, StrBufSize(PAnsiChar(lpRecipArray)), 0);
+    FillChar(lpRecipArray^, {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}StrBufSize(PAnsiChar(lpRecipArray)), 0);
     for i := 0 to Recipients.Count - 1 do
     begin
       s := AnsiString(Recipients[i]);
@@ -366,10 +366,10 @@ begin
         CheckRecipient(s)
       else
       begin
-        lpRecipArray^[i].lpszName := StrCopy(new(TlpszRecipName)^,
-          PAnsiChar(s));
-        lpRecipArray^[i].lpszAddress := StrCopy(new(TlpszRecipName)^,
-          PAnsiChar(s));
+        lpRecipArray^[i].lpszName := {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}
+            StrCopy(new(TlpszRecipName)^, PAnsiChar(s));
+        lpRecipArray^[i].lpszAddress := {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}
+            StrCopy(new(TlpszRecipName)^, PAnsiChar(s));
       end;
     end;
     Message.nRecipCount := Recipients.Count;
@@ -387,7 +387,7 @@ begin
       Dispose(lpAttachArray^[i].lpszPathname);
       Dispose(lpAttachArray^[i].lpszFileName);
     end;
-    StrDispose(PAnsiChar(lpAttachArray));
+    {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}StrDispose(PAnsiChar(lpAttachArray));
   end;
 
   if Assigned(Recipients) and (Recipients.Count > 0) then
@@ -400,7 +400,7 @@ begin
       if Assigned(lpRecipArray^[i].lpszAddress) then
         Dispose(lpRecipArray^[i].lpszAddress);
     end;
-    StrDispose(PAnsiChar(lpRecipArray));
+    {$IFDEF DELPHIX_SEATTLE_UP}AnsiStrings.{$ENDIF}StrDispose(PAnsiChar(lpRecipArray));
   end;
 
   if intMAPISession <> 0 then
